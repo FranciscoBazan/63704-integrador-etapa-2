@@ -19,7 +19,7 @@ export const get = async (url) => {
 
 export const post = async (url, dato) => {
     try {
-        
+
         const config = {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
@@ -28,11 +28,11 @@ export const post = async (url, dato) => {
 
         const respuesta = await fetch(url, config)
         if ( !respuesta.ok ) {
-            throw new Error(`Error POST ${respuesta.status} ${respuesta.statusText}`)
+            throw new Error(`Ocurrió un problema ${respuesta.status} ${respuesta.statusText}`)
         }
-        const ProductoCreado = await respuesta.json()
-        return ProductoCreado
-
+        const productoCreado = await respuesta.json()
+        return productoCreado
+        
     } catch (error) {
         console.error('ERROR POST', error)
     }
