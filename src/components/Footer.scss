@@ -51,6 +51,10 @@
         margin-top: .5em;
     }
 
+    &__list-link {
+        color: variables.$cards-color;
+    }
+
     @media (min-width: 426px) and (max-width: 768px) {
         & {
             width: 40%;
@@ -115,6 +119,7 @@
     &__form-button {
         font-size: 1.2em;
         background-color: variables.$searchbar-backgorund-color;
+        color: variables.$cards-color;
         padding: .5em;
         position: absolute;
         right: 5px;

@@ -131,6 +131,7 @@
         font-size: 1.4em;
         order: 1;
         margin-left: .5em;
+        color: variables.$searchbar-color;
 
         @media (min-width: 1024px) {
             & {

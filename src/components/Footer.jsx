@@ -1,4 +1,7 @@
+import { faFacebook, faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import './Footer.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
   return (
@@ -7,16 +10,16 @@ const Footer = () => {
       <h2 className="social-media__title">Seguínos</h2>
       <ul className="social-media__list">
         <li className="social-media__list-item">
-          <a href="#" className="social-media__list-link">{/* <i className="fa-brands fa-facebook" style="color: #ffffff;"></i> */}</a>
+          <a href="#" className="social-media__list-link"><FontAwesomeIcon icon={faFacebook} /></a>
         </li>
         <li className="social-media__list-item">
-          <a href="#" className="social-media__list-link">{/* <i className="fa-brands fa-instagram" style="color: #ffffff;"></i> */}</a>
+          <a href="#" className="social-media__list-link"><FontAwesomeIcon icon={faInstagram} /></a>
         </li>
         <li className="social-media__list-item">
-          <a href="#" className="social-media__list-link">{/* <i className="fa-brands fa-tiktok" style="color: #ffffff;"></i> */}</a>
+          <a href="#" className="social-media__list-link"><FontAwesomeIcon icon={faTiktok} /></a>
         </li>
         <li className="social-media__list-item">
-          <a href="#" className="social-media__list-link">{/* <i className="fa-brands fa-youtube" style="color: #ffffff;"></i> */}</a>
+          <a href="#" className="social-media__list-link"><FontAwesomeIcon icon={faYoutube} /></a>
         </li>
       </ul>
     </div>
@@ -26,7 +29,7 @@ const Footer = () => {
       <form action="#" className="newsletter__form-container">
         <input type="email" className="newsletter__form-email" id="newsletter" placeholder=" " />
         <label htmlFor="newsletter" className="newsletter__form-label">Correo Electrónico</label>
-        <button type="submit" className="newsletter__form-button">{/* <i className="fa-solid fa-arrow-right" style="color: #ffffff;"></i> */}</button>
+        <button type="submit" className="newsletter__form-button"><FontAwesomeIcon icon={faArrowRight} /></button>
       </form>
     </div>
 
