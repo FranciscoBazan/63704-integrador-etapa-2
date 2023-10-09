@@ -1,15 +1,61 @@
-table.tabla-alta {
-    border-collapse: collapse;
-    width: 95%;
-    margin: 1rem auto;
+@use "../Styles/variables.scss";
 
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
+table.tabla-alta {
+  border-collapse: collapse;
+  width: 95%;
+  margin: 1rem auto;
+  font-size: 1.2em;
+
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 0.8em;
+    text-align: left;
+    background-color: #f2f2f2;
+  }
+
+  th {
+    background-color: variables.$nosotros-text-background-color;
+    border: none;
+    color: variables.$cards-color;
+  }
+
+  @media (max-width: 768px) {
+
+    td:nth-child(1)::before {
+      content: "nombre";
+    }
+    td:nth-child(2)::before {
+      content: "precio";
+    }
+    td:nth-child(3)::before {
+      content: "stock";
+    }
+    td:nth-child(4)::before {
+      content: "categoría";
+    }
+    td:nth-child(5)::before {
+      content: "detalles";
+    }
+    td:nth-child(6)::before {
+      content: "foto";
+    }
+    td:nth-child(7)::before {
+      content: "envío";
+    }
+
+    td::before {
+      text-transform: capitalize;
+      font-weight: 700;
+    }
+
+    td {
+      display: grid;
+      grid-template-columns: 9ch auto;
     }
 
     th {
-        background-color: #f2f2f2;
+      display: none;
     }
+  }
 }

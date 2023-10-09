@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import ProductoContext from '../contexts/ProductoContext'
 import { useForm } from '../hooks/useForm'
+import './Formulario.scss'
 
 const formInicial = {
   id: null,
@@ -48,11 +49,12 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
 
   return (
     <>
-      <h2>Agregar (Editar) productos</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="lbl-nombre">Nombre</label>
-          <input
+      <h2 className='alta-form-title'>Agregar (Editar) productos</h2>
+      <form className='alta-form' onSubmit={handleSubmit}>
+        <div className='alta-form__container nombre'>
+          <label className='alta-form__label' htmlFor="lbl-nombre">Nombre</label>
+          <input 
+            className='alta-form__input'
             type="text"
             name='nombre'
             id='lbl-nombre'
@@ -60,9 +62,10 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             value={form.nombre}
             onChange={handleChange} />
         </div>
-        <div>
-          <label htmlFor="lbl-precio">Precio</label>
-          <input
+        <div className='alta-form__container precio'>
+          <label className='alta-form__label' htmlFor="lbl-precio">Precio</label>
+          <input 
+            className='alta-form__input'
             type="text"
             name='precio'
             id='lbl-precio'
@@ -70,9 +73,10 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             value={form.precio}
             onChange={handleChange} />
         </div>
-        <div>
-          <label htmlFor="lbl-stock">Stock</label>
-          <input
+        <div className='alta-form__container stock'>
+          <label className='alta-form__label' htmlFor="lbl-stock">Stock</label>
+          <input 
+            className='alta-form__input'
             type="text"
             name='stock'
             id='lbl-stock'
@@ -80,9 +84,10 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             value={form.stock}
             onChange={handleChange} />
         </div>
-        <div>
-          <label htmlFor="lbl-marca">Marca</label>
-          <input
+        <div className='alta-form__container marca'>
+          <label className='alta-form__label' htmlFor="lbl-marca">Marca</label>
+          <input 
+            className='alta-form__input'
             type="text"
             name='marca'
             id='lbl-marca'
@@ -90,9 +95,10 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             value={form.marca}
             onChange={handleChange} />
         </div>
-        <div>
-          <label htmlFor="lbl-categoria">Categoría</label>
-          <input
+        <div className='alta-form__container categoria'>
+          <label className='alta-form__label' htmlFor="lbl-categoria">Categoría</label>
+          <input 
+            className='alta-form__input'
             type="text"
             name='categoria'
             id='lbl-categoria'
@@ -100,9 +106,10 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             value={form.categoria}
             onChange={handleChange} />
         </div>
-        <div>
-          <label htmlFor="lbl-detalles">Detalles</label>
-          <input
+        <div className='alta-form__container detalles'>
+          <label className='alta-form__label' htmlFor="lbl-detalles">Detalles</label>
+          <input 
+            className='alta-form__input'
             type="text"
             name='detalles'
             id='lbl-detalles'
@@ -110,9 +117,10 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             value={form.detalles}
             onChange={handleChange} />
         </div>
-        <div>
-          <label htmlFor="lbl-foto">Foto</label>
-          <input
+        <div className='alta-form__container foto'>
+          <label className='alta-form__label' htmlFor="lbl-foto">Foto</label>
+          <input 
+            className='alta-form__input'
             type="text"
             name='foto'
             id='lbl-foto'
@@ -120,9 +128,10 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             value={form.foto}
             onChange={handleChange} />
         </div>
-        <div>
-          <label htmlFor="lbl-envio">Envío</label>
-          <input
+        <div className='alta-form__container envio'>
+          <label className='alta-form__label' htmlFor="lbl-envio">Envío</label>
+          <input 
+            /* className='alta-form__input' */
             type="checkbox"
             name='envio'
             id='lbl-envio'
@@ -130,8 +139,13 @@ const Formulario = ( { productoAEditar, setProductoAEditar } ) => {
             checked={form.envio}
             onChange={handleChange} />
         </div>
-        <button type="submit">Enviar</button>
-        <button type="reset" onClick={handleReset}>Limpiar</button>
+        <div className="boton">
+          <button type="submit">Enviar</button>
+        </div>
+        <div className="boton">
+          <button type="reset" onClick={handleReset}>Limpiar</button>
+        </div>
+        
       </form>
     </>
   )
