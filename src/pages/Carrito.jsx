@@ -23,9 +23,9 @@ const Carrito = () => {
 
   return (
     <>
-      <h1>Listado de productos en el carrito</h1>
+      <h1 className='carrito-header'>Listado de productos en el carrito</h1>
       {
-        !carrito.length <= 0 && <button onClick={handleComprar}>Comprar</button>
+        !carrito.length <= 0 && <button className='carrito-boton' onClick={handleComprar}>Comprar</button>
       }
       <table className='tabla-carrito'>
         <thead>
@@ -47,14 +47,14 @@ const Carrito = () => {
             ) : (
               carrito.map((producto, idx) => (
                 <tr key={idx}>
-                  <td>
-                    <img src={producto.foto} alt={producto.nombre} width="50px" />
+                  <td className='td-producto'>
+                    <img src={producto.foto} alt={producto.nombre} />
                   </td>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.cantidad}</td>
-                  <td>{producto.precio}</td>
-                  <td>{producto.cantidad * producto.precio}</td>
-                  <td>
+                  <td className='td-producto'>{producto.nombre}</td>
+                  <td className='td-producto'>{producto.cantidad}</td>
+                  <td className='td-producto'>{producto.precio}</td>
+                  <td className='td-producto'>{producto.cantidad * producto.precio}</td>
+                  <td className='td-producto'>
                     <button onClick={() => handleEliminar(producto.id)}>Eliminar</button>
                   </td>
                 </tr>
