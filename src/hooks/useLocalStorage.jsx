@@ -59,5 +59,5 @@ export const useLocalStorage = (clave, valorInicial = []) => {
         }
     }
 
-    return [ guardarValor, eliminarValor, limpiarStorage, actualizarValores, valorAlmacenado ]
+    return [ guardarValor, eliminarValor, limpiarStorage, actualizarValores, valorAlmacenado, setValorAlmacenado ]
 }

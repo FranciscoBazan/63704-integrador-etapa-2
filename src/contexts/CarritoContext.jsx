@@ -7,7 +7,7 @@ const CarritoContext = createContext()
 const url = 'http://localhost:8080/carrito/'
 
 const CarritoProvider = ( { children } ) => {
-    const [ guardarEnElCarrito, eliminarDelCarrito, limpiarCarrito, actualizarCarrito, carrito ] = useLocalStorage('carrito', [])
+    const [ guardarEnElCarrito, eliminarDelCarrito, limpiarCarrito, actualizarCarrito, carrito, setCarrito ] = useLocalStorage('carrito', [])
 
     function elProductoEstaEnElCarrito(producto) {
         return carrito.filter(prod => prod.id === producto.id).length
@@ -44,7 +44,7 @@ const CarritoProvider = ( { children } ) => {
         }
     }
 
-    const data = { carrito, agregarCarritoContext, eliminarCarritoContext, guardarCarritoContext }
+    const data = { carrito, setCarrito, actualizarCarrito, agregarCarritoContext, eliminarCarritoContext, guardarCarritoContext }
 
     return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>
 

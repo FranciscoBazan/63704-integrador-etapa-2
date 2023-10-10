@@ -3,7 +3,7 @@ import './Carrito.scss'
 import CarritoContext from '../contexts/CarritoContext'
 
 const Carrito = () => {
-  const { carrito, eliminarCarritoContext, guardarCarritoContext } = useContext(CarritoContext)
+  const { carrito, setCarrito, actualizarCarrito, eliminarCarritoContext, guardarCarritoContext } = useContext(CarritoContext)
   console.log(carrito)
 
   const handleEliminar = (id) => {
@@ -19,6 +19,21 @@ const Carrito = () => {
       return total + (prod.precio * prod.cantidad)
     }, 0)
     return sumaTotal
+  }
+
+  function handleCambiarCantidad(e, productoId) {
+    const nuevoValor = e.target.value
+
+    const carritoActualizado = carrito.map((producto) => {
+      if (producto.id === productoId) {
+        return { ...producto, cantidad: nuevoValor}
+      }
+      return producto
+    })
+
+    setCarrito(carritoActualizado)
+    actualizarCarrito(carritoActualizado)
+
   }
 
   return (
@@ -51,7 +66,9 @@ const Carrito = () => {
                     <img src={producto.foto} alt={producto.nombre} />
                   </td>
                   <td className='td-producto'>{producto.nombre}</td>
-                  <td className='td-producto'>{producto.cantidad}</td>
+                  <td className='td-producto'>
+                    <input className='input-carrito' type="number" value={producto.cantidad} onChange={(e) => handleCambiarCantidad(e, producto.id)} min="1" />
+                  </td>
                   <td className='td-producto'>{producto.precio}</td>
                   <td className='td-producto'>{producto.cantidad * producto.precio}</td>
                   <td className='td-producto'>

@@ -36,6 +36,29 @@ table.tabla-carrito {
   margin: 1rem auto;
   font-size: 1.2em;
 
+  .input-carrito {
+    padding: .3em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 60px;
+
+    @media (min-width: 1024px) {
+      padding: .2em;
+    }
+  }
+
+  .input-carrito::-webkit-inner-spin-button,
+  .input-carrito::-webkit-outer-spin-button {
+    height: auto;
+    cursor: pointer;
+    padding: .6em;
+
+    @media (min-width: 1024px) {
+      padding: .2em;
+    }
+  }
+
   th,
   td {
     border: 1px solid #ddd;
