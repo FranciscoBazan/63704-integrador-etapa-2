@@ -75,7 +75,7 @@
     }
 
     &__button:hover {
-        background-color: #eee;
+        background-color: variables.$button4-background-color-hover;
     }
 
     @media (min-width: 1024px) {
